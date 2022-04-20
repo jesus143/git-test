@@ -1,0 +1,58 @@
+.container {
+	border: 1px solid red;
+	height: 500px;
+}
+
+.border-class {
+
+	border-bottom:  1px solid red;
+}
+
+.td-1 {
+	width: 300px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.td-2 { 
+	width: 90%; 
+}
+
+.name-div {
+	float:right; 
+	padding-right: 50px;
+}
+
+img {
+
+	width: 50px;
+}
+
+ul li {
+	list-style: none;
+}
+
+
+ul li a {
+ 	text-decoration: none;
+}
+
+
+.sidebar {
+	position: absolute;
+	border-right: 1px solid red;
+	height: 78%;
+	width: 20%;
+}
+
+.content { 
+	height: 100%;
+	width: 79.30%;
+	float: right;
+	/* border: 1px solid red; */
+}
+
+.content .blog {
+	padding-left:20px;
+}
