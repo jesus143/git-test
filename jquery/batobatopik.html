@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Jquery Lesson</title>
+
+ 
+	<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+
+
+	<style> 
+		.container {
+			font-size: 20px;
+		}
+	</style>
+
+
+	<script>
+
+		 
+	    $(function(){ 
+
+ 					setTimeout(function(){
+
+
+ 			const pieces = [
+ 			
+			"<img src='https://cdn-icons-png.flaticon.com/512/4405/4405457.png' style='width:80px;' /> <br> Bato", 
+
+ 			"<img src='https://thumbs.dreamstime.com/b/document-icon-vector-illustration-design-flat-paper-icon-vector-document-icon-vector-illustration-design-flat-paper-icon-vector-164319261.jpg' style='width:80px;' /> <br> Papel", 
+
+			"<img src='https://cdn-icons-png.flaticon.com/512/195/195816.png' style='width:80px;' /> <br> Gunting", 
+
+ 			];
+ 						//   - 0     - 1       - 2        
+ 
+
+ 				var humanScore = 0; 
+ 				var computerScore = 0; 
+ 				var gameover = 5; 	
+ 				
+ 
+
+ 				$("button").click(function(){
+
+ 
+ 					var computerChoice =  Math.floor(Math.random() * 3);
+
+					console.log("  computerChoice ", computerChoice) 
+
+ 					var humanChoice = $(this).val(); 
+ 					var resultChoice = "";
+ 
+ 					if(computerChoice == 0 && humanChoice == 1) {
+ 						resultChoice = "Human Win!"
+ 						humanScore++;
+ 					} 
+ 					else if(computerChoice == 0 && humanChoice == 2) {
+ 						resultChoice = "Computer Win!" 
+ 						computerScore++;
+ 					}  
+ 					else if(computerChoice == 0 && humanChoice == 0) {
+ 						resultChoice = "Draw!" 
+ 					}
+ 
+   
+ 					if(computerChoice == 1 && humanChoice == 0) {
+ 						resultChoice = "Computer Win!" 
+ 						computerScore++;
+ 					} 
+ 					else if(computerChoice == 1 && humanChoice == 2) {
+ 						resultChoice = "Human Win!" 
+ 						humanScore++;
+ 					}  
+ 					else if(computerChoice == 1 && humanChoice == 1) {
+ 						resultChoice = "Draw!" 
+ 					}
+
+ 
+
+ 					if(computerChoice == 2 && humanChoice == 0) {
+ 						resultChoice =  "Human Win!" 
+ 						humanScore++;
+ 					} 
+ 					else if(computerChoice == 2 && humanChoice == 2) {
+ 						resultChoice = "Draw!" 
+ 					}  
+ 					else if(computerChoice == 2 && humanChoice == 1) {
+ 						resultChoice = "Computer Win!" 
+ 						computerScore++;
+ 					}
+ 
+					$("#robot-choice").html(pieces[computerChoice])
+
+					$("#human-choice").html(pieces[humanChoice]); 
+
+					$("#result-choice").html( "<br>" + resultChoice + " <br> human score " + humanScore + " <br>  computer score " + computerScore);  
+				})
+ 		 	}, 500)
+            // const generatedAnswer = 0;
+
+
+ 
+ 			// var computerChoice = 0;
+
+
+ 			// var humanChoice = 0 ;
+
+
+
+ 			// if(humanChoice )
+
+
+
+		})
+
+
+
+	</script>
+</head>
+<body>
+
+	<div id="container" class="container"> 
+			Bato Bato Pick GAME: <br>
+ 
+			<p style="color:green">
+			 Robot Choice: <span id="robot-choice"> </span>
+   			</p>
+
+			<p style="color:grey" >
+			 Human Choice: <span id="human-choice"> </span>
+   			</p>
+ 
+			<p>
+			 Result : <span id="result-choice"> </span>
+   			</p>
+
+
+			<p> Pick your choice </p> <br>
+
+			<button value="0">Bato</button>
+			<button value="1" >Papel</button>
+			<button value="2" >Gunting</button>
+
+
+	</div>
+ 
+
+</body>
+</html>
